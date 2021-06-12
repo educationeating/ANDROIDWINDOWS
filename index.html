@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="start.png" type="image/x-icon" />
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  box-shadow: 2px 2px 20px royalblue;
+  height: 70%;
+  width: 0%;
+  position: fixed;
+  z-index: 100000;
+  bottom: 0;
+  left: 0;
+  background-color: #bdffff;
+  background-image: url('/rgb.webp');
+  background-blend-mode: overlay;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #d5d5d7;
+  text-shadow: 1px 1px 1px black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  bottom: 0px;
+  left: -35px;
+  box-shadow: 2px 2px 20px skyblue;
+  padding: 0px;
+  z-index: 1;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav p {
+    position: absolute;
+    padding: 2px;
+    right: 0;
+    font-weight: bold;
+    top: 0;
+    color: white;
+    bottom: 0;
+    height: 100%;
+    background: #63fff520;
+}
+
+body{
+    background-image: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.app{
+    width: 50px;
+    padding-top: 10px;
+}
+
+.app img{
+    background: linear-gradient(to bottom left, #bdfffb 0%, #63fff5 100%);
+    margin: 20px;
+    border: 2px ;
+    border: outset 5px #63fff5;
+    padding:  2px;
+    margin-left: 5px;
+}
+.taskbarapp{
+    background: linear-gradient(to bottom left,rgba(189,255,251,0.373) 0%, rgba(99,255,245,0.36) 100%);
+    border: outset 5px #63fff5;
+    padding: 2px;
+    margin-left: 10px;
+    box-shadow: 4px 4px 2px rgba(99,255,245,0.775);
+}
+.sidenav{
+    background-image: url('/rgb.webp');
+}
+.sidenav span {
+    background-repeat:repeat;
+    position: absolute;
+    box-shadow: 4px 5px 2px skyblue;
+    padding: 20px 20px;
+    width: 50%;
+    height: 100px;
+    top: 70px;
+    z-index: 1000;
+    border: outset 5px #63fff5;
+    background-image: url('./rbg.webp');
+    background-size: contain;
+    text-align: center;
+    color: skyblue;
+    text-shadow: 1px 1px 1px royalblue;
+    justify-content: center;
+    margin: 10px;
+}
+@keyframes popup{
+    0%{
+        width: 20px;
+        height: 20px;
+    }
+    100%{
+        width: 50%;
+        height: 100px;
+    }
+}
+.link{
+    border-radius: 5%;
+    background: #bdffff55;
+    position: absolute;
+    left: 0;
+    width: 80%;
+    padding-top: 10px;
+}
+.link a{
+    border-radius: 5%;
+    border: outset 2px skyblue;
+    box-shadow: 4px 4px 1px skyblue;
+    margin: 10px;
+    background: linear-gradient(to bottom left, #bdfffb55 0%, #63fff555 100%);
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.taskbar{
+  position: fixed;
+  left: -1px;
+  bottom: -1px;
+  width: 100%;
+  padding: 10px;
+  z-index: 99;
+ background: rgb(51,237,255);
+}
+#clock{
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    bottom: 10px;
+}
+.option{
+    background: linear-gradient(to bottom left,rgba(189,255,251,0.373) 0%, rgba(99,255,245,0.36) 100%);
+    border: outset 1px #63fff5;
+    margin-left: 1px;
+    position: absolute;
+    right: 0px;
+}
+.option-1{
+  background: linear-gradient(to bottom left,rgba(189,255,251,0.373) 0%, rgba(99,255,245,0.36) 100%);
+  border: outset 5px #63fff5;
+  padding: 2px;
+  position: absolute;
+  right: 20px;
+  box-shadow: 4px 4px 2px rgba(99,255,245,0.775);
+}
+</style>
+</head>
+<body>
+    
+<a href="https://www.bing.com/" class="app"><img width="50px" src="bing.png" alt="" /></a>
+<br />
+<a class="app" href="https://sites.google.com/view/bp-co/home?authuser=0"><img src="bp.png" width="50px" alt="" /></a>
+<div id="mySidenav" class="sidenav">
+   
+    <p style="color:white;" id="goto">
+        <a href="#A">A</a>
+        <br />
+        <a href="#B">B</a>
+        <br />
+        <a href="#C">C</a>
+        <br />
+        <a href="#E">E</a>
+        <a href="#F">F</a>
+    </p>
+  <a href="javascript:void(0)" class="closebtn" id="close" onclick="closeNav()"><img src="start.png" width="50px" alt="" /></a>
+   <div class="link">
+       <span id="cover" class="andows"> Andows </span>
+       <br />
+       <a id="A" href="#">A</a>
+       <a onclick="closeNav()" href="https://www.amazon.in/"><img src="amazon.png" width="40px" alt="" />amazon</a>
+       <a id="B" href="#">B</a>
+  <a onclick="closeNav()" class="shortcut" href="https://sites.google.com/view/bp-co/home?authuser=0"><img src="bp.png" width="40px" alt="" />Banish Productions&ensp;</a>
+  <a onclick="closeNav()" class="shortcut" href="https://www.bing.com/"><img src="bing.png" width="50px" alt="" />Bing</a>
+  <a id="C" href="#">C</a>
+  <a onclick="closeNav()" href="https://www.google.com/url?sa=t&source=web&rct=j&url=https://edition.cnn.com/&ved=2ahUKEwjQm6j-3I_xAhXYc30KHbhuBXAQFjAAegQIDBAC&usg=AOvVaw38zNMfLTk2LQOqQ0E5F1-r&cshid=1623419527340"><img src="cnn.png" width="40px" /> CNN</a>
+  <a onclick="closeNav()" href="https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.chase.com/&ved=2ahUKEwiYxuu234_xAhWPgUsFHZ0jA9QQFjAAegQIBBAC&usg=AOvVaw3bnFPKq-IoUY8rdNyt2t3T"><img src="chase.png" width="40px" alt="" />Chase</a>
+  <a id="E" href="#">E</a>
+         <a onclick="closeNav()" href="https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.ebay.com/&ved=2ahUKEwi4wN_44o_xAhWDF3IKHUscDsMQFjAAegQICRAC&usg=AOvVaw2IUWs7JZelxpS-zydrZoSX"><img src="ebay.png" width="40px" />Ebay</a>
+         <a id="F" href="#">F</a>
+         <a onclick="closeNav()" href="https://www.facebook.com/"><img src="FB.png" width="40px" />Facebook</a>
+    </div>
+</div>
+<div id="myDIV">
+<embed style="width:100%;height:100%;display:hidden;right:0px;bottom:-20px;position:absolute;" src="indexi.html" type="text/html" />
+</div>
+<div class="taskbar">
+    <span style="
+  font-size: 18px;
+  border: none;
+  outline: none;
+  box-shadow:2px 2px 5px skyblue;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size:30px;
+  cursor:pointer;" onclick="openNav()"><img src="start.png" width="50px" height="50px" alt="" /></span>
+  
+  <a href="https://www.bing.com/" class="taskbarapp"><img width="50px" src="bing.png" alt="" /></a>
+<a class="taskbarapp" href="https://sites.google.com/view/bp-co/home?authuser=0"><img src="bp.png" width="50px" alt="" /></a>
+<button class="option-1" id="clock" onclick="myFunction()">11:41:15</button>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("cover").style.position = "fixed" ;
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("goto").style.position = "absolute";
+   document.getElementById("cover").style.position = "absolute";
+}
+
+setInterval(showTime, 1000); 
+
+        function showTime() { 
+
+            let time = new Date(); 
+
+            let hour = time.getHours(); 
+
+            let min = time.getMinutes(); 
+
+            let sec = time.getSeconds(); 
+
+            am_pm = "AM"; 
+
+  
+
+            if (hour > 12) { 
+
+                hour -= 12; 
+
+                am_pm = "PM"; 
+
+            } 
+
+            if (hour == 0) { 
+
+                hr = 12; 
+
+                am_pm = "AM"; 
+
+            } 
+
+  
+
+            hour = hour < 10 ? "0" + hour : hour; 
+
+            min = min < 10 ? "0" + min : min; 
+
+            sec = sec < 10 ? "0" + sec : sec; 
+
+  
+
+            let currentTime = hour + ":"  
+
+                + min + ":" + sec + am_pm; 
+
+  
+
+            document.getElementById("clock") 
+
+                .innerHTML = currentTime; 
+
+        } 
+
+  
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "hidden") {
+    x.style.display = "block";
+  } 
+  else if (x.style.display === "none") {
+    x.style.display = "block";
+  }
+  else{
+    x.style.display = "none";
+  }
+}
+        showTime(); 
+        const d = new Date();
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+document.getElementById("demo").innerHTML = days[d.getDay()];
+
+</script>
+</body>
+</html>
